@@ -1,84 +1,27 @@
 
 # SendGrid
 
-* Contributors: SendGrid 
-* Donate link: http://sendgrid.com/
-* Tags: email, email reliability, email templates, sendgrid, smtp, transactional email, wp_mail,email infrastructure, email marketing, marketing email, deliverability, email deliverability, email delivery, email server, mail server, email integration, cloud email
-* Requires at least: 4.6
-* Tested up to: 4.9
-* Stable tag: 1.11.8
+* Contributors: Originally Based on SendGrid 
+* Tags: none
+* Requires at least: 5.2
+* Tested up to: 5.2
+* Stable tag: 1.12.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Send emails and upload contacts through SendGrid from your WordPress installation using SMTP or API integration.
+Modified version of original SendGrid connector.
 
 ## Description
 
-What is the SendGrid WordPress Plugin?
-
-SendGrid’s cloud-based email infrastructure relieves businesses of the cost and complexity of maintaining custom email systems. SendGrid provides reliable deliverability, scalability, and real-time analytics along with flexible APIs that make custom integration with your application a breeze.
-
-SendGrid’s WordPress plugin replaces WordPress’s default wp_mail() function by using either an SMTP or API integration with SendGrid to send outgoing email from your WordPress installation. It also allows you to upload contacts directly to your SendGrid Marketing Campaigns account via a subscription widget.
-
-By using the SendGrid plugin, you will be able to take advantage of improved deliverability and an expanded feature set, including tracking and analytics, to enhance user engagement on your WordPress installation. SendGrid also provides world class customer support, should you run into any issues.
-
-For more details, <a href="https://sendgrid.com/docs/Integrate/Tutorials/WordPress/index.html">consult our official documentation </a>
-
-For assistance you can contact SendGrid Support from the <a href="https://support.sendgrid.com/">SendGrid Support Portal</a>. Click **Login & Contact Support**, and then **Contact Support** to see your support contact options. Paying SendGrid customers have the option to contact support via phone, chat, or by submitting a ticket using our web form. All SendGrid customers have the option to submit a ticket using our web form.
-
-### Agency Program
-
-Are you sending emails on behalf of your clients? SendGrid's Agency Program offers exclusive pricing and support for agencies looking to improve their email program. 
-
-Want to learn more? Visit the <a href="https://www.sendgrid.com/partners/agencies">SendGrid Agency Page </a> 
-
-### The Subscription Widget
-
-SendGrid’s WordPress Subscription Widget makes it easy for people visiting your WordPress site to subscribe to your marketing emails, such as any newsletters, announcements, or promotional offers you may send. Upon signup, they’ll automatically receive an opt-in email allowing them to confirm their desire to begin receiving your emails. This confirmation constitutes “double opt-in,” a deliverability best practice.
-
-For more details, consult the official documentation for the <a href="https://sendgrid.com/docs/Integrate/Tutorials/WordPress/subscription_widget.html">Subscription Widget </a>
-
-### Multisite
-
-If you are using the SendGrid plugin in a Multisite environment, you need to Network Activate it. You can then access the settings page on the network dashboard and the configure settings will be used for all sites.
-
-You can enable access for SendGrid settings to each subsite in the Multisite Settings tab. If the checkbox is unchecked then that site will not see the SendGrid settings page and it will use the settings set on the network.
-Warning! When you activate SendGrid management for a subsite, that site will not be able to send emails until the admin updates the SendGrid settings on that subsite.
-
-If you already had the plugin installed in a Multisite environment and you update to versions after 1.9.0 you may need to reconfigure your plugin.
+Forked by Orangeleaf Systems to remove functionality and potential vulnerabilities
 
 ## Installation
 
 Requirements:
 
-1. PHP version >= 5.6 and <= 7.1. Installing this plugin on PHP versions 5.3 and earlier will cause your website to break. Installation on PHP versions 5.4 and 5.5 will work but it is not recommended.
+1. PHP version >= 7.2 
 2. To send emails through SMTP you need to install also the 'Swift Mailer' plugin.
 3. If wp_mail() function has been declared by another plugin that you have installed, you won't be able to use the SendGrid plugin
-
-To upload the SendGrid Plugin .ZIP file:
-
-1. Upload the WordPress SendGrid Plugin to the /wp-contents/plugins/ folder.
-2. Activate the plugin from the "Plugins" menu in WordPress.
-3. Create a SendGrid account at <a href="http://sendgrid.com/partner/wordpress" target="_blank">http://sendgrid.com/partner/wordpress</a>
-4. Navigate to "Settings" -> "SendGrid Settings" and enter your SendGrid credentials.
-
-To auto install the SendGrid Plugin from the WordPress admin:
-
-1. Navigate to "Plugins" -> "Add New"
-2. Search for "SendGrid Plugin" and click "Install Now" for the "SendGrid Plugin" listing.
-3. Activate the plugin from the "Plugins" menu in WordPress, or from the plugin installation screen.
-4. Create a SendGrid account at <a href="http://sendgrid.com/partner/wordpress" target="_blank">http://sendgrid.com/partner/wordpress</a>
-5. Navigate to "Settings" -> "SendGrid Settings" and enter your SendGrid credentials
-
-For Multisite:
-
-1. Navigate to "My Sites" -> "Network Admin" -> "Plugins"
-2. Click on "Add New"
-3. Search for "SendGrid Plugin" and click "Install Now" for the "SendGrid Plugin" listing.
-4. Network Activate the plugin from the "Plugins" menu in WordPress, or from the plugin installation screen.
-5. Create a SendGrid account at <a href="http://sendgrid.com/partner/wordpress" target="_blank">http://sendgrid.com/partner/wordpress</a>
-6. Navigate to "My Sites" -> "Network Admin" -> "Dashboard"
-7. Click on the "SendGrid Settings" item in the menu on the left and enter your SendGrid credentials.
 
 ### Global settings
 
@@ -163,56 +106,6 @@ Note that all HTML emails sent through our plugin also contain the HTML body in 
 
 ## Frequently asked questions
 
-### Does SendGrid have an Agency program?
-
-Yes. If you are sending email on behalf of clients you can find more information on <a href="https://www.sendgrid.com/partners/agencies/">SendGrid's Agency page </a>
-
-### Is there any official documentation for this plugin ?
-
-Yes. <a href="https://sendgrid.com/docs/Integrate/Tutorials/WordPress/index.html">You can find it here </a>
-
-### What PHP versions are supported ?
-
-Plugin versions 1.11.x were tested and confirmed to work on PHP 5.4, 5.5, 5.6, 7.0, 7.1. It DOES NOT work on PHP 5.3 and earlier.
-
-Plugin versions 1.10.x were tested and confirmed to work on PHP 5.3, 5.4, 5.5 and 5.6. It DOES NOT work on PHP 7.0 and later.
-
-### What credentials do I need to add on settings page ?
-
-Create a SendGrid account at <a href="http://sendgrid.com/partner/wordpress" target="_blank">https://sendgrid.com/partner/wordpress</a> and generate a new API key on <https://app.sendgrid.com/settings/api_keys>.
-
-### How can I define a plugin setting to be used for all sites ?
-
-Add it into your wp-config.php file. Example: `define('SENDGRID_API_KEY', 'your_api_key');`.
-
-### How to use SendGrid with WP Better Emails plugin ?
-
-If you have WP Better Emails plugin installed and you want to use the template defined here instead of the SendGrid template you can add the following code in your functions.php file from your theme:
-
-```php
-function use_wpbe_template( $message, $content_type ) {
-    global $wp_better_emails;
-    if ( 'text/plain' == $content_type ) {
-      $message = $wp_better_emails->process_email_text( $message );
-    } else {
-      $message = $wp_better_emails->process_email_html( $message );
-    }
-
-    return $message;
-}
-add_filter( 'sendgrid_override_template', 'use_wpbe_template', 10, 2 );
-```
-
-Using the default templates from WP Better Emails will cause all emails to be sent as HTML (i.e. text/html content-type). In order to send emails as plain text (i.e. text/plain content-type) you should remove the HTML Template from WP Better Emails settings page. This is can be done by removing the '%content%' tag from the HTML template.
-
-### Why are my emails sent as HTML instead of plain text ?
-
-For a detailed explanation see this page: https://sendgrid.com/docs/Classroom/Build/Format_Content/plain_text_emails_converted_to_html.html
-
-### Will contacts from the widget be uploaded to Marketing Campaigns or Legacy Newsletter ?
-
-The contacts will only be uploaded to Marketing Campaigns.
-
 ### What permissions should my API keys have ?
 
 For the API Key used for sending emails (the General tab):
@@ -242,79 +135,10 @@ To disable this functionality, you need to add the following line in your wp-con
 
 `define('SENDGRID_DISABLE_BP_NORMALIZE_WHITESPACE', '1');`
 
-### Can I use shortcodes to customize the subscription confirmation page ?
-
-Yes. You need to create custom page and select it from the settings page. You can place any of these shortcodes in the body of that page. Here's an example :
-
-```
-Hi [sendgridSubscriptionFirstName] [sendgridSubscriptionLastName],
-Your email address : [sendgridSubscriptionEmail] has been successfully added.
-You'll hear from us soon!
-```
-
-You need to enable the use of the First Name and Last Name fields from the settings page in order to use the shortcodes for them.
-
-### Does this plugin support Multisite?
-
-Yes. This plugin has basic Multisite support. You need to Network Activate this plugin.
-
-The settings for all sites in the network can be configured only by the Network Admin in the Network Admin Dashboard.
-
-Since 1.10.5 the Network Admin can delegate the configuration for each subsite to their respective owners. This will allow any subsite to use it's own SendGrid Plugin configuration.
-
-### How can I further customize my emails?
-
-When calling the wp_mail() function you can send a SendGrid PHP email object in the headers argument.
-
-Here is an example:
-
-```
-$email = new SendGrid\Email();
-$email
-    ->setFrom('me@bar.com')
-    ->setHtml('<strong>Hello World!</strong>')
-    ->addCategory('customCategory')
-;
-
-wp_mail('foo@bar.com', 'Subject goes here', 'Message goes here', $email);
-```
-
-You can find more examples here: https://github.com/sendgrid/sendgrid-php/blob/v4.0.2/README.md
-
-### My server is slow. Can I increase the timeout for API requests?
-
-Yes. You can define a constant in your wp-config.php file like this:
-
-`define('SENDGRID_REQUEST_TIMEOUT', 10);`
-
-The value is in seconds, this means that API requests will wait 10 seconds for a reponse from the SendGrid API server until timing out.
-
-## Screenshots
-
-1. Go to Admin Panel, section Plugins and activate the SendGrid plugin. If you want to send emails through SMTP you need to install also the 'Swift Mailer' plugin.
-![screenshot-1](/assets/screenshot-1.png)
-2. After activation "Settings" link will appear.
-![screenshot-2](/assets/screenshot-2.png)
-3. Go to settings page and provide your SendGrid API Key. On this page you can set also the default "Name", "Sending Address" and "Reply Address".
-![screenshot-3](/assets/screenshot-3.png)
-4. If you provide valid credentials, a form which can be used to send test emails will appear. Here you can test the plugin sending some emails.
-![screenshot-4](/assets/screenshot-5.png)
-5. Header provided in the send test email form.
-![screenshot-5](/assets/screenshot-6.png)
-6. If you click in the right corner from the top of the page on the "Help" button, a popup window with more information will appear.
-![screenshot-6](/assets/screenshot-7.png)
-7. Select the time interval for which you want to see SendGrid statistics and charts.
-![screenshot-7](/assets/screenshot-8.png)
-8. Now you are able to configure port number when using SMTP method.
-![screenshot-8](/assets/screenshot-9.png)
-9. You can configure categories for which you would like to see your stats.
-![screenshot-9](/assets/screenshot-10.png)
-10. You can use substitutions for emails using X-SMTPAPI headers.
-![screenshot-10](/assets/screenshot-11.png)
-11. You can configure the subscription widget.
-![screenshot-11](/assets/screenshot-12.png)
-
 ## Changelog
+
+**1.12.0**
+Forked.  Removed potentially vulnerable features.
 
 **1.11.7**
 * Added a configuration parameter of API request timeout in seconds
