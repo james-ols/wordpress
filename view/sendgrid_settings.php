@@ -1,10 +1,8 @@
 <div class="wrap">
-  <a href="http://sendgrid.com" target="_blank">
-    <img src="<?php echo plugins_url( '/images/logo.png', __FILE__ ) ?>" width="100" alt="" />
-  </a>
+    <img src="<?php echo plugins_url( '/images/logo.png', __FILE__ ) ?>" width="100" alt="" />Modified by Orangeleaf Systems Ltd
 
   <?php
-    $tabs = array( 'general' => 'General', 'marketing' => 'Subscription Widget' );
+    $tabs = array( 'general' => 'General');
 
     // If network settings display settings for subsites
     if ( is_multisite() and is_main_site() ) {

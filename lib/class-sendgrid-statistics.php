@@ -20,23 +20,16 @@ class Sendgrid_Statistics
       // Add SendGrid widget in dashboard
       add_action( 'wp_dashboard_setup', array( __CLASS__, 'add_dashboard_widget' ) );
 
-      // Add SendGrid stats page in menu
-      add_action( 'admin_menu', array( __CLASS__, 'add_statistics_menu' ) );
-
       // Add SendGrid javascripts in header
       add_action( 'admin_enqueue_scripts', array( __CLASS__, 'add_headers' ) );
 
-      // Add SendGrid page for get statistics through ajax
-      add_action( 'wp_ajax_sendgrid_get_stats', array( __CLASS__, 'get_ajax_statistics' ) );
     } elseif ( is_multisite() and is_main_site() ) {
       // Add SendGrid stats page in menu
-      add_action( 'network_admin_menu', array( __CLASS__, 'add_network_statistics_menu' ) );
+      // add_action( 'network_admin_menu', array( __CLASS__, 'add_network_statistics_menu' ) );
 
       // Add SendGrid javascripts in header
       add_action( 'admin_enqueue_scripts', array( __CLASS__, 'add_headers' ) );
 
-      // Add SendGrid page for get statistics through ajax
-      add_action( 'wp_ajax_sendgrid_get_stats', array( __CLASS__, 'get_ajax_statistics' ) );
     }
   }
 
@@ -157,33 +150,6 @@ class Sendgrid_Statistics
    */
   public static function get_ajax_statistics()
   {
-    if ( ! isset( $_POST['sendgrid_nonce'] ) || ! wp_verify_nonce( $_POST['sendgrid_nonce'], 'sendgrid-nonce') ) {
-      die( 'Permissions check failed' );
-    }
-
-    $parameters = array();
-    $parameters['apikey']   = Sendgrid_Tools::get_api_key();
-    $parameters['data_type'] = 'global';
-
-    if ( array_key_exists( 'days', $_POST ) ) {
-      $parameters['days'] = $_POST['days'];
-    } else {
-      $parameters['start_date'] = $_POST['start_date'];
-      $parameters['end_date']   = $_POST['end_date'];
-    }
-
-    $endpoint = 'v3/stats';
-
-    if ( isset( $_POST['type'] ) && 'general' != $_POST['type'] ) {
-      if( 'wordpress' == $_POST['type'] ) {
-        $parameters['categories'] = 'wp_sendgrid_plugin';
-      } else {
-        $parameters['categories'] = urlencode( $_POST['type'] );
-      }
-      $endpoint = 'v3/categories/stats';
-    }
-    echo Sendgrid_Tools::do_request( $endpoint, $parameters );
-
     die();
   }
 

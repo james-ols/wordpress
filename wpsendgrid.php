@@ -2,10 +2,10 @@
 /*
 Plugin Name: SendGrid
 Plugin URI: http://wordpress.org/plugins/sendgrid-email-delivery-simplified/
-Description: Email Delivery. Simplified. SendGrid's cloud-based email infrastructure relieves businesses of the cost and complexity of maintaining custom email systems. SendGrid provides reliable delivery, scalability and real-time analytics along with flexible APIs that make custom integration a breeze.
-Version: 1.11.8
-Author: SendGrid
-Author URI: http://sendgrid.com
+Description: Forked and heavily modified by Orangeleaf Systems Ltd.
+Version: 1.12.0
+Author: Orangeleaf Systems Ltd
+Author URI: https://www.orangeleaf.com
 Text Domain: sendgrid-email-delivery-simplified
 License: GPLv2
 */
