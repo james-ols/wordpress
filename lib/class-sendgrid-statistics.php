@@ -17,16 +17,11 @@ class Sendgrid_Statistics
   public static function set_up_menu()
   {
     if ( ( ! is_multisite() and current_user_can('manage_options') ) || ( is_multisite() and ! is_main_site() and get_option( 'sendgrid_can_manage_subsite' ) ) ) {
-      // Add SendGrid widget in dashboard
-      add_action( 'wp_dashboard_setup', array( __CLASS__, 'add_dashboard_widget' ) );
 
       // Add SendGrid javascripts in header
       add_action( 'admin_enqueue_scripts', array( __CLASS__, 'add_headers' ) );
 
     } elseif ( is_multisite() and is_main_site() ) {
-      // Add SendGrid stats page in menu
-      // add_action( 'network_admin_menu', array( __CLASS__, 'add_network_statistics_menu' ) );
-
       // Add SendGrid javascripts in header
       add_action( 'admin_enqueue_scripts', array( __CLASS__, 'add_headers' ) );
 

@@ -1476,14 +1476,4 @@ function sg_subscription_widget_admin_notice() {
   if( ! current_user_can('manage_options') ) {
     return;
   }
-
-  echo '<div class="notice notice-success">';
-  echo '<p>';
-  echo _e( 'Check out the new SendGrid Subscription Widget! See the SendGrid Plugin settings page in order to configure it.' );
-  echo '<form method="post" id="sendgrid_mc_email_form" class="mc_email_form" action="#">';
-  echo '<input type="hidden" name="sg_dismiss_widget_notice" id="sg_dismiss_widget_notice" value="true"/>';
-  echo '<input type="submit" id="sendgrid_mc_email_submit" value="Dismiss this notice" style="padding: 0!important; font-size: small; background: none; border: none; color: #0066ff; text-decoration: underline; cursor: pointer;" />';
-  echo '</form>';
-  echo '</p>';
-  echo '</div>';
 }

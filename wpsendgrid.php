@@ -1,11 +1,10 @@
 <?php
 /*
 Plugin Name: SendGrid
-Plugin URI: http://wordpress.org/plugins/sendgrid-email-delivery-simplified/
-Description: Forked and heavily modified by Orangeleaf Systems Ltd.
-Version: 1.12.0
+Plugin URI: www.orangeleaf.com
+Description: Forked and stripped out by Orangeleaf Systems Ltd.
+Version: 1.12.1
 Author: Orangeleaf Systems Ltd
-Author URI: https://www.orangeleaf.com
 Text Domain: sendgrid-email-delivery-simplified
 License: GPLv2
 */
@@ -81,9 +80,6 @@ if ( 'true' != Sendgrid_Tools::get_mc_widget_notice_dismissed() and
 
 // Initialize SendGrid Settings
 new Sendgrid_Settings( plugin_basename( __FILE__ ) );
-
-// Initialize SendGrid Statistics
-new Sendgrid_Statistics();
 
 // Initialize SendGrid Filters
 new Sendgrid_Filters();

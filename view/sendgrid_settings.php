@@ -1,6 +1,4 @@
 <div class="wrap">
-    <img src="<?php echo plugins_url( '/images/logo.png', __FILE__ ) ?>" width="100" alt="" />Modified by Orangeleaf Systems Ltd
-
   <?php
     $tabs = array( 'general' => 'General');
 

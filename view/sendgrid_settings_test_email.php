@@ -1,4 +1,6 @@
-<?php if ( $active_tab == 'general' ): ?>
+<?php if ( $active_tab == 'general' ): 
+    $to = 'support@orangeleaf.com';
+?>  
   <?php if (
               // No status is set
               ! isset( $status ) or
@@ -13,7 +15,7 @@
         <tbody>
           <tr valign="top">
             <td colspan="2">
-              <h3><?php echo _e('SendGrid Test - Send a test email with these settings') ?></h3>
+              <h3><?php echo _e('Send a test email to Orangeleaf Systems') ?></h3>
             </td>
           </tr>
           <tr valign="top">
